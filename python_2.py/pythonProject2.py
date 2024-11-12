@@ -1,5 +1,14 @@
 import random
 
+try:    
+    username = input( "Wha's your name: " )
+except ValueError:
+    print( "You need to provide a name" )
+else:
+    print( "Hi " + username  )
+finally:
+    print( "Program starting" )
+
 # Initial balance is loaded from the file if it exists, otherwise starts at 0
 balance = 0
 scenario_counter = 0  # Counter to track the number of scenario selections
@@ -7,6 +16,10 @@ scenario_counter = 0  # Counter to track the number of scenario selections
 # Define amount choices the user can select from
 answerChoices = [1, 2, 3, 4, 5]  # Option 5 now represents a random amount
 greeting_choices = [1, 2, 3]
+
+for currentAnswerChoice in answerChoices:
+    print( "Current answer" + str (currentAnswerChoice) )
+
 MAX_BALANCE = 100
 
 def add_money_to_balance(current_balance, amount):
